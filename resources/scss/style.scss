@@ -1,0 +1,32 @@
+
+.form-control:focus {
+  color: #6e707e;
+  background-color: #fff;
+  border-color: darkseagreen;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(4, 147, 144, 1);
+}
+
+#calendar {
+	.datepicker {
+		table {
+			width:100%;
+			
+			tr {
+				td {
+					&.day {
+					    background: #ddd;
+					    border-radius: 0;
+
+					    &.disabled {
+						    background: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.datepicker-inline{
+		width:100%;
+	}
+}

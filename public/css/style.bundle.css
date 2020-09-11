@@ -1,0 +1,25 @@
+.form-control:focus {
+  color: #6e707e;
+  background-color: #fff;
+  border-color: darkseagreen;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #049390;
+}
+
+#calendar .datepicker table {
+  width: 100%;
+}
+
+#calendar .datepicker table tr td.day {
+  background: #ddd;
+  border-radius: 0;
+}
+
+#calendar .datepicker table tr td.day.disabled {
+  background: none;
+}
+
+#calendar .datepicker-inline {
+  width: 100%;
+}
+

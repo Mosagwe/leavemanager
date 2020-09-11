@@ -1,0 +1,9 @@
+.form-control{
+	&:focus{
+		color: $primary;
+		  background-color: #fff;
+		  border-color: darkseagreen;
+		  outline: 0;
+		  box-shadow: 0 0 0 0.1rem rgba(4, 147, 144, 1);
+	}
+}
