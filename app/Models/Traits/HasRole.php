@@ -77,4 +77,9 @@ trait HasRole
     {
         return self::withPermission('Approve Leave Requests')->get();
     }
+
+    public static function hr()
+    {
+        return self::withPermission('HR')->get();
+    }
 }

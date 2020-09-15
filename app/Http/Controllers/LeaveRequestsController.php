@@ -12,6 +12,7 @@ use App\Notifications\LeaveRequestApprovalNotification;
 use App\Notifications\LeaveRequestApprovedNotification;
 use App\Notifications\LeaveRequestDeclinedNotification;
 use App\Notifications\LeaveRequestRecommendedNotification;
+use App\Notifications\HrLeaveApprovalNotification;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -71,6 +72,8 @@ class LeaveRequestsController extends Controller
             ]);
 
             Notification::send($leaveRequest->applicant, new LeaveRequestApprovedNotification($leaveRequest));
+            Notification::send(User::hr(), new HrLeaveApprovalNotification($leaveRequest));
+
         }
 
         Alert::success('Success', 'record processed successfully');

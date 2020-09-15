@@ -2,8 +2,8 @@
 # Hello {{ $user->name }}
 
 {{ $leaveRequest->applicant->name }} has been recommended to be on leave from
-{{ $leaveRequest->start_at }} to
-{{ $leaveRequest->end_at }}.
+{{ $leaveRequest->start_at->format(config('custom.date_format')) }} to
+{{ $leaveRequest->end_at->format(config('custom.date_format')) }}.
 
 Please take a moment to review and process the application.
 
