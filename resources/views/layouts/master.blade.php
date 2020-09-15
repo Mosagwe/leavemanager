@@ -11,17 +11,17 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
 
  
-    <link href="{{ asset('css/vendor.bundle.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/vendor.bundle.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/style.bundle.css') }}" rel="stylesheet">
     
 </head>
 
-<body class="@yield('body-class')" style="background-image: url('/img/header.jpg');background-position: center;background-size: cover;">
+<body class="@yield('body-class')" style="background-image: url('public/img/header.jpg');background-position: center;background-size: cover;">
 <div id="app">
     @yield('content')
 </div>
-<script src="{{ asset('js/vendor.bundle.js') }}"></script>
-<script src="{{ asset('js/scripts.bundle.js') }}"></script>
+<script src="{{ asset('public/js/vendor.bundle.js') }}"></script>
+<script src="{{ asset('public/js/scripts.bundle.js') }}"></script>
 @include('sweetalert::alert')
 @stack('scripts')
 </body>

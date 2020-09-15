@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-light bg-success topbar mb-4 static-top shadow">
     <div>
-         <h4 class="text-center" style="font-weight: bold;"><font style="color:#000;">Huduma </font><font style="color:#fa3333;">Kenya </font><font style="color:#009933;">Secretariat </font></h4>
+         <h4 class="text-center" style="font-weight: bold;"><font style="color:#000;">HKS </font><font style="color:#fa3333;">Leave </font><font style="color:#fff;">Manager </font></h4>
     </div>
   
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
