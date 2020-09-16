@@ -9,7 +9,7 @@
                 <div class="card my-5">
                     <div class="card-body">
                         <div >
-                            <img src="{{ asset('public/img/hudumalogo2.png')}}" style="display: block;  margin-left: auto;  margin-right: auto;
+                            <img src="{{ asset('/img/hudumalogo2.png')}}" style="display: block;  margin-left: auto;  margin-right: auto;
   ">
                         </div>
                         <hr>
