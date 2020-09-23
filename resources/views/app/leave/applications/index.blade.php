@@ -27,12 +27,15 @@
                             <th>Eligible</th>
                             <th>Balance</th>
                         </tr>
+
                         @foreach(Auth::user()->leaveBalances as $leaveBalance)
-                            <tr>
-                                <td>{{ $leaveBalance->leaveType->name }}</td>
-                                <td>{{ $leaveBalance->leaveType->maximum_days }}</td>
-                                <td>{{ $leaveBalance->balance }}</td>
-                            </tr>
+                            @if($leaveBalance->leaveType)
+                                <tr>
+                                    <td>{{ $leaveBalance->leaveType->name }}</td>
+                                    <td>{{ $leaveBalance->leaveType->maximum_days }}</td>
+                                    <td>{{ $leaveBalance->balance }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                     </table>
                 </div>

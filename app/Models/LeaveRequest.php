@@ -55,4 +55,11 @@ class LeaveRequest extends BaseModel
                     ->orWhereDate('end_at', '>', today()->format('Y-m-d'));
             });
     }
+
+    public function scopePending($query){
+        return $query->where('status',self::PENDING_RECOMMENDATION);
+    }
+    public function scopePendinginplace($query){
+        return $query->where('status',self::PENDING_INPLACE);
+    }
 }

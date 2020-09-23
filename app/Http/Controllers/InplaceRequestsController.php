@@ -12,6 +12,7 @@ use App\Notifications\LeaveRequestRecommendationNotification;
 use Illuminate\Http\Request;
 use App\DataTables\InplaceRequestsDataTable as InplaceRequests;
 use Illuminate\Support\Facades\Notification;
+use Auth;
 
 class InplaceRequestsController extends Controller
 {
@@ -50,6 +51,7 @@ class InplaceRequestsController extends Controller
 
 
         Alert::success('Success', 'Record updated successfully');
+        
 
         return redirect(route('inplace.index'));
     }
@@ -60,6 +62,7 @@ class InplaceRequestsController extends Controller
             $leaveRequest->update([
                 'status' => LeaveRequest::PENDING_APPROVAL
             ]);
+           
 
             Notification::send($leaveRequest->applicant, new InplaceRequestAcceptedNotification($leaveRequest));
 

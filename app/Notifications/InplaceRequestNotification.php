@@ -35,7 +35,7 @@ class InplaceRequestNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -51,5 +51,18 @@ class InplaceRequestNotification extends Notification
                 'user' => $notifiable,
                 'leaveRequest' => $this->leaveRequest
             ]);
+    }
+
+    public function toArray($notifiable)
+    {
+        return [
+            'leave_id' => $this->leaveRequest->id,
+            'user_id' => $this->leaveRequest->user_id,
+            'leave_type_id' => $this->leaveRequest->leave_type_id,
+            'start_at' => $this->leaveRequest->start_at,
+            'end_at' => $this->leaveRequest->end_at,
+            'number_of_days' => $this->leaveRequest->number_of_days,
+            
+        ];
     }
 }

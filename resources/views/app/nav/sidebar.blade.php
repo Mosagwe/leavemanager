@@ -22,6 +22,9 @@
             <a class="nav-link" href="{{ route('leave-requests.pending') }}">
                 <i class="fas fa-clock"></i>
                 <span>Pending</span>
+                @if($pendingCount)
+                    <span class="badge badge-warning">{{ $pendingCount }}</span>
+                @endif
             </a>
         </li>
     @endcan
@@ -90,6 +93,9 @@
         <a class="nav-link" href="{{ route('inplace.index') }}">
             <i class="fas fa-user"></i>
             <span>Inplace Requests</span>
+            @if($pendinginplaceCount)
+                <span class="badge badge-warning">{{ $pendinginplaceCount }}</span>
+            @endif
         </a>
     </li>
 </ul>
