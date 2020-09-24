@@ -33,6 +33,9 @@
             <a class="nav-link" href="{{ route('leave-requests.recommended') }}">
                 <i class="fas fa-check-double"></i>
                 <span>Recommended</span>
+                @if($pendingApprovalCount)
+                    <span class="badge badge-warning">{{ $pendingApprovalCount }}</span>
+                @endif
             </a>
         </li>
     @endcan
@@ -41,6 +44,9 @@
             <a class="nav-link" href="{{ route('leave-requests.approved') }}">
                 <i class="fas fa-check-circle"></i>
                 <span>Approved</span>
+                @if($approvedCount)
+                    <span class="badge badge-warning">{{ $approvedCount }}</span>
+                @endif
             </a>
         </li>
     @endcan
@@ -86,7 +92,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('applications.index') }}">
             <i class="fas fa-edit"></i>
-            <span>Leave Applications</span>
+            <span>My Leave Applications</span>
         </a>
     </li>
     <li class="nav-item">

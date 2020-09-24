@@ -18,10 +18,12 @@
                                     data-rule-required="true">
                                 <option value="">Select Option</option>
                                 @foreach(Auth::user()->leaveBalances as $balance)
-                                    <option data-balance="{{ $balance->balance }}"
-                                            value="{{ $balance->leave_type_id }}">
-                                        {{ $balance->leaveType->name }}
-                                    </option>
+                                    @if ($balance->leaveType)                                    
+                                        <option data-balance="{{ $balance->balance }}"
+                                                value="{{ $balance->leave_type_id }}">
+                                            {{ $balance->leaveType->name }}
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
                             @error('leave_type')

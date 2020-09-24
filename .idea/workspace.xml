@@ -6,15 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c460dcb3-0393-4469-b91f-7f17a1af742e" name="Default Changelist" comment="Change title of page">
-      <change beforePath="$PROJECT_DIR$/.idea/hksleavemanager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hksleavemanager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InplaceRequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InplaceRequestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/ViewComposers/CountersComposer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ViewComposers/CountersComposer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/UpdateEmployeeLeaveTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/UpdateEmployeeLeaveTypes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/LeaveRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LeaveRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/InplaceRequestNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/InplaceRequestNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/vendor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/vendor.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/applications/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/applications/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/applications/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/applications/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/applications/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/applications/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app/nav/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/nav/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,6 +183,7 @@
       <updated>1599831553365</updated>
       <workItem from="1599831554903" duration="913000" />
       <workItem from="1600771110767" duration="2537000" />
+      <workItem from="1600945780859" duration="1296000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1599831725773</created>

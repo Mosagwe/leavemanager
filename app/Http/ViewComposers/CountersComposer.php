@@ -28,6 +28,8 @@ class CountersComposer
             $view->with([
                 'pendingCount' => LeaveRequest::pending()->count(),
                 'pendinginplaceCount' => LeaveRequest::pendinginplace()->count(),
+                'pendingApprovalCount' => LeaveRequest::pendingapproval()->count(),
+                'approvedCount' => LeaveRequest::approvedCount()->count(),
 //                'assignedCount' => Order::assignedCount(),
 //                'submittedCount' => Order::submittedCount(),
 //                'revisionsCount' => Order::revisionsCount(),

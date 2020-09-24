@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\EmployeeCreated;
+use App\Events\EmployeeUpdated;
 use App\Models\EmploymentType;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -11,10 +12,10 @@ class UpdateEmployeeLeaveTypes implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param \App\Events\EmployeeCreated $event
+     * @param \App\Events\EmployeeCreated|EmployeeUpdated $event
      * @return void
      */
-    public function handle(EmployeeCreated $event)
+    public function handle($event)
     {
         $employmentType = EmploymentType::find($event->user->employment_type_id);
 

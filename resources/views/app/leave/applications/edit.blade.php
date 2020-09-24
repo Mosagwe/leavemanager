@@ -21,11 +21,13 @@
                                     data-rule-required="true">
                                 <option value="">Select Option</option>
                                 @foreach(Auth::user()->leaveBalances as $balance)
-                                    <option data-balance="{{ $balance->balance }}"
-                                            {{ $leaveRequest->leave_type_id == $balance->leave_type_id ? "selected":"" }}
-                                            value="{{ $balance->leave_type_id }}">
-                                        {{ $balance->leaveType->name }}
-                                    </option>
+                                    @if ($balance->leaveType)
+                                        <option data-balance="{{ $balance->balance }}"
+                                                {{ $leaveRequest->leave_type_id == $balance->leave_type_id ? "selected":"" }}
+                                                value="{{ $balance->leave_type_id }}">
+                                            {{ $balance->leaveType->name }}
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
                             @error('leave_type')
@@ -38,7 +40,7 @@
                             <label for="start_at" class="control-label">Start Date</label>
                             <div class="input-group date @error('start_at') is-invalid @enderror">
                                 <input type="text" readonly class="form-control"
-                                       value="{{ $leaveRequest->start_at }}"
+                                       value="{{ $leaveRequest->start_at->format('Y-m-d') }}"
                                        name="start_at" id="start_at">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>

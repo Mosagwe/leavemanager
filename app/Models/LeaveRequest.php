@@ -62,4 +62,11 @@ class LeaveRequest extends BaseModel
     public function scopePendinginplace($query){
         return $query->where('status',self::PENDING_INPLACE);
     }
+    public function scopePendingapproval($query){
+        return $query->where('status',self::PENDING_APPROVAL);
+    }
+
+    public function scopeApprovedCount($query){
+        return $query->where('status',self::APPROVED);
+    }
 }
