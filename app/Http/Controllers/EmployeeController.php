@@ -93,6 +93,7 @@ class EmployeeController extends Controller
             'role_id' => $request->role,
             'employment_type_id' => $request->employment_type,
             'department_id' => $request->department,
+            'phone_number'=>$request->phone_number,
         ]);
 
         event(new EmployeeCreated($user));
@@ -151,7 +152,9 @@ class EmployeeController extends Controller
             'role_id' => $request->role,
             'employment_type_id' => $request->employment_type,
             'department_id' => $request->department,
+            'phone_number'=>$request->phone_number,
         ]);
+
 
         event(new EmployeeUpdated($user));
 
@@ -190,6 +193,10 @@ class EmployeeController extends Controller
             'email' => [
                 'required',
                 'email',
+                'max:255'
+            ],
+            'phone_number' => [
+                'required',
                 'max:255'
             ],
             'role' => 'required',

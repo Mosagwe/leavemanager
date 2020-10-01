@@ -65,6 +65,7 @@ class EmployeesDataTable extends DataTable
         return [
             Column::make('name'),
             Column::make('email'),
+            Column::make('phone_number')->title('Phone Number'),
             Column::make('role.name')->title('Role'),
             Column::make('employment_type.name')->title('Employment'),
             Column::make('department.name')->title('Department'),

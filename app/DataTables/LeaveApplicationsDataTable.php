@@ -24,8 +24,9 @@ class LeaveApplicationsDataTable extends DataTable
                 return $leaveRequest->start_at->format(config('custom.date_format'));
             })->editColumn('end_at', function ($leaveRequest) {
                 return $leaveRequest->end_at->format(config('custom.date_format'));
-            })
-            ->addColumn('action', function ($leaveRequest) {
+            })->editColumn('created_at', function ($leaveRequest) {
+                return $leaveRequest->created_at->diffForHumans();
+            })->addColumn('action', function ($leaveRequest) {
                 return view('app.leave.applications.action',['leaveRequest' => $leaveRequest]);
             });
     }
@@ -69,6 +70,7 @@ class LeaveApplicationsDataTable extends DataTable
             Column::make('start_at'),
             Column::make('end_at'),
             Column::make('status'),
+            Column::make('created_at')->title('Applied'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

@@ -28,9 +28,11 @@ class UpdateEmployeeLeaveTypes implements ShouldQueue
                continue;
            }
 
+
+
            $event->user->leaveBalances()->create([
                'leave_type_id' => $leaveType->id,
-               'balance' => $leaveType->max_days
+               'balance' => $leaveType->maximum_days
            ]);
        }
     }

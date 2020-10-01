@@ -54,4 +54,9 @@ class User extends Authenticatable
         return $query->where("id", "<>", Auth::user()->id)
             ->where('department_id', Auth::user()->department_id);
     }
+
+    public function getFullnameAttribute()
+    {
+        return $this->name;
+    }
 }

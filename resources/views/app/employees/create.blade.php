@@ -34,6 +34,19 @@
                             </span>
                                     @enderror
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="phone_number" class="control-label">Phone Number</label>
+                                    <input type="text" class="form-control @error('phone_numnber') is-invalid @enderror"
+                                           id="phone_number"
+                                           name="phone_number" data-rule-required="true" data-rule-maxlength="255">
+                                    @error('phone_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group">
                                     <label for="gender" class="control-label">Gender</label>
                                     <select type="text" class="form-control @error('gender') is-invalid @enderror"
