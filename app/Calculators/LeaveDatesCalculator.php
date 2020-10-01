@@ -25,7 +25,7 @@ class LeaveDatesCalculator
     public function endDate(LeaveType $leaveType, Carbon $startDate, int $days)
     {
         if ($leaveType->calendar_days) {
-            return $startDate->addDays($days);
+            return $startDate->addDays($days-1);
         }
 
         $holidays = Holiday::all();
