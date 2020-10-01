@@ -54,7 +54,7 @@ class LeaveRequestDeclinedNotification extends Notification implements ShouldQue
     public function toMail($notifiable)
     {
         return (new MailMessage)->subject('Leave Request Declined')
-            ->markdown('mail.employee.declined', [
+            ->markdown('mail.leave.declined', [
                 'user' => $notifiable,
                 'leaveRequest' => $this->leaveRequest,
                 'reason' => $this->reason

@@ -76,6 +76,7 @@ class LeaveRequestsController extends Controller
 
         }
 
+
         Alert::success('Success', 'record processed successfully');
 
         return redirect(route('leave-requests.pending'));
@@ -83,17 +84,20 @@ class LeaveRequestsController extends Controller
 
     public function destroy(Request $request)
     {
+
         $leaveRequest = LeaveRequest::findOrFail($request->leaveRequest);
+
 
         $leaveRequest->update([
             'status' => LeaveRequest::DECLINED,
             'recommended_by' => \Auth::user()->id,
+            'decline_reason'=>$request->reason
         ]);
 
         Notification::send($leaveRequest->applicant, new LeaveRequestDeclinedNotification($leaveRequest, $request->reason));
 
 
-        Alert::success('Success', 'record processed successfully');
+        Alert::success('Success', 'Record processed successfully');
 
         return redirect(route('leave-requests.pending'));
     }

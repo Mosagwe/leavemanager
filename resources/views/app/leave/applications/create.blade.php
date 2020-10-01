@@ -18,8 +18,9 @@
                                     data-rule-required="true">
                                 <option value="">Select Option</option>
                                 @foreach(Auth::user()->leaveBalances as $balance)
-                                    @if ($balance->leaveType)                                    
-                                        <option data-balance="{{ $balance->balance }}"
+                                    @if ($balance->leaveType)
+                                        <option data-balance="{{ $balance->balance }}" data-partial="{{  $balance->leaveType->can_use_partially}}"
+                                                data-max-days="{{  $balance->leaveType->maximum_days}}"
                                                 value="{{ $balance->leave_type_id }}">
                                             {{ $balance->leaveType->name }}
                                         </option>
@@ -89,7 +90,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        @include('app.partials.forms.actions', ['url' => route('roles.index')])
+                        @include('app.partials.forms.actions', ['url' => route('applications.index')])
                     </div>
                 </form>
             </div>

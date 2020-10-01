@@ -18,6 +18,7 @@
                     @method('PUT')
                 </form>
             @endcan
+
         @endif
         @if(Auth::user()->can('recommend', \App\Models\LeaveRequest::class) ||
                 Auth::user()->can('approve', \App\Models\LeaveRequest::class))

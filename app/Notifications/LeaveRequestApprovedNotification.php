@@ -51,4 +51,5 @@ class LeaveRequestApprovedNotification extends Notification implements ShouldQue
             'leaveRequest' => $this->leaveRequest
         ]);
     }
+
 }

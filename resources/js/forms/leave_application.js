@@ -25,9 +25,28 @@ $(function () {
             }
         });
 
+        $("#leave_type").change(function (){
+            let partial = $("#leave_type option:selected").data('partial');
+
+            if(partial === 0){
+                $("input#days").prop('readonly', true).val($("#leave_type option:selected").data('max-days'));
+            } else {
+                $("input#days").removeAttr('readonly').val('');
+            }
+        });
+
         $("#leave_type, #start_at, #days").change(function () {
             renderSummary();
         });
+
+        let partial = $("#leave_type option:selected").data('partial');
+
+        if(partial === 0){
+            $("input#days").prop('readonly', true).val($("#leave_type option:selected").data('max-days'));
+        } else {
+            $("input#days").removeAttr('readonly');
+        }
+        renderSummary();
     }
 });
 

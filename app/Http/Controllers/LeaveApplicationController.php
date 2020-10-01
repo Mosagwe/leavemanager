@@ -82,11 +82,22 @@ class LeaveApplicationController extends Controller
     {
         $this->validate($request, $this->rules());
 
+        $leaveType = LeaveType::find($request->leave_type);
+
+        if($leaveType->can_use_partially== 0)
+        {
+            $days=$leaveType->maximum_days;
+        }
+        else
+        {
+            $days=$request->days;
+        }
+
         $leaveDateCalculator = new LeaveDatesCalculator();
         $end_date = $leaveDateCalculator->endDate(
-            LeaveType::find($request->leave_type),
+            $leaveType,
             Carbon::createFromFormat('Y-m-d', $request->start_at),
-            $request->days
+            $days
         );
 
         $leaveRequest = LeaveRequest::create([
@@ -94,7 +105,7 @@ class LeaveApplicationController extends Controller
             'start_at' => $request->start_at,
             'end_at' => $end_date,
             'leave_type_id' => $request->leave_type,
-            'number_of_days' => $request->days,
+            'number_of_days' => $days,
             'reason' => $request->reason,
             'status' => LeaveRequest::PENDING_INPLACE,
             'employee_inplace' => $request->employee_inplace
@@ -142,12 +153,22 @@ class LeaveApplicationController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, $this->rules());
+        $leaveType = LeaveType::find($request->leave_type);
+
+        if($leaveType->can_use_partially== 0)
+        {
+            $days=$leaveType->maximum_days;
+        }
+        else
+        {
+            $days=$request->days;
+        }
 
         $leaveDateCalculator = new LeaveDatesCalculator();
         $end_date = $leaveDateCalculator->endDate(
-            LeaveType::find($request->leave_type),
+            $leaveType,
             Carbon::createFromFormat('Y-m-d', $request->start_at),
-            $request->days
+            $days
         );
 
         $leaveRequest = LeaveRequest::findOrFail($id);
@@ -156,7 +177,7 @@ class LeaveApplicationController extends Controller
             'start_at' => $request->start_at,
             'end_at' => $end_date,
             'leave_type_id' => $request->leave_type,
-            'number_of_days' => $request->days,
+            'number_of_days' => $days,
             'reason' => $request->reason,
             'employee_inplace' => $request->employee_inplace
         ]);

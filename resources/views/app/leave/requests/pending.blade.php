@@ -8,6 +8,7 @@
             {!! $dataTable->table() !!}
         </div>
     </div>
+    @include('app.leave.modals.decline');
 @endsection
 
 @include('app.partials.datatables.scripts')

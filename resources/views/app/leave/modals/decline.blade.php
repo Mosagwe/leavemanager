@@ -15,7 +15,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="reason" class="control-label">Reason</label>
-                        <textarea name="reason" data-rule-max="1200" id="reason" class="form-control"></textarea>
+                        <textarea name="reason" data-rule-maxlength="255" id="reason" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -32,7 +32,7 @@ class LeaveRequest extends BaseModel
         return $this->belongsTo(User::class, 'user_id')->withDefault();
     }
 
-    public function employeInplace()
+    public function employeeInplace()
     {
         return $this->belongsTo(User::class, 'employee_inplace')->withDefault();
     }

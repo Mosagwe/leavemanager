@@ -21,6 +21,7 @@ class CreateLeaveRequestsTable extends Migration
             $table->date('end_at');
             $table->integer('number_of_days');
             $table->string('reason')->nullable();
+            $table->string('decline_reason')->nullable();
             $table->integer('status')->default(0);
             $table->integer('employee_inplace');
             $table->integer('recommended_by')->nullable();

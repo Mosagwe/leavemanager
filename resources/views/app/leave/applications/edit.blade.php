@@ -22,7 +22,8 @@
                                 <option value="">Select Option</option>
                                 @foreach(Auth::user()->leaveBalances as $balance)
                                     @if ($balance->leaveType)
-                                        <option data-balance="{{ $balance->balance }}"
+                                        <option data-balance="{{ $balance->balance }}" data-partial="{{  $balance->leaveType->can_use_partially}}"
+                                                data-max-days="{{  $balance->leaveType->maximum_days}}"
                                                 {{ $leaveRequest->leave_type_id == $balance->leave_type_id ? "selected":"" }}
                                                 value="{{ $balance->leave_type_id }}">
                                             {{ $balance->leaveType->name }}
@@ -86,7 +87,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="reason" class="control-label">Reason (optional)</label>
+                            <label for="reason" class="control-label">Comments (optional)</label>
                             <textarea class="form-control @error('reason') is-invalid @enderror" id="reason"
                                       name="reason"
                                       data-rule-maxlength="255">{{ $leaveRequest->reason }}</textarea>
@@ -103,7 +104,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-4 offset-md-2" id="leaveSummary">
+        <div class="col-md-4 offset-md-2">
             <div class="card mb-3" id="calendar" style="display: none"></div>
             <div id="leaveSummary" style="display: none"></div>
         </div>

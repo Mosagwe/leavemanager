@@ -47,6 +47,9 @@ class InplaceRequestDeclinedNotification extends Notification implements ShouldQ
     public function toMail($notifiable)
     {
         return (new MailMessage)->subject('Inplace Request Declined')
-            ->markdown('mail.leave.inplace_declined');
+            ->markdown('mail.leave.inplace_declined', [
+                'user' => $notifiable,
+                'leaveRequest' => $this->leaveRequest
+            ]);
     }
 }
