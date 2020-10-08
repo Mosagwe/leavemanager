@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Auth;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class LeaveRequest extends BaseModel
+class LeaveRequest extends BaseModel implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
+
     const PENDING_INPLACE = 0;
 
     const PENDING_RECOMMENDATION = 1;

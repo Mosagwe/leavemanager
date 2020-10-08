@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements Auditable
 {
-    use Notifiable, SoftDeletes, HasRole;
+    use Notifiable, SoftDeletes, HasRole,\OwenIt\Auditing\Auditable;
 
     /**
      * Status for a active user
@@ -73,4 +75,6 @@ class User extends Authenticatable
     {
         return $this->name;
     }
+
+
 }
