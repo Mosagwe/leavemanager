@@ -13,6 +13,7 @@ use App\Notifications\LeaveRequestApprovedNotification;
 use App\Notifications\LeaveRequestDeclinedNotification;
 use App\Notifications\LeaveRequestRecommendedNotification;
 use App\Notifications\HrLeaveApprovalNotification;
+use App\Notifications\SupervisorLeaveApprovedNotification;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -72,6 +73,7 @@ class LeaveRequestsController extends Controller
             ]);
 
             Notification::send($leaveRequest->applicant, new LeaveRequestApprovedNotification($leaveRequest));
+            Notification::send($leaveRequest->applicant->supervisors($leaveRequest->applicant->department_id), new SupervisorLeaveApprovedNotification($leaveRequest));
             Notification::send(User::hr(), new HrLeaveApprovalNotification($leaveRequest));
 
         }

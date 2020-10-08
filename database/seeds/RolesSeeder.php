@@ -8,8 +8,10 @@ class RolesSeeder extends Seeder
     protected $roles = [
         ['name' => 'Administrator'],
         ['name' => 'Head of Department'],
-        ['name' => 'ICT Officer'],
-        ['name' => 'CEO']
+        ['name' => 'User'],
+        ['name' => 'Line Manager'],
+        ['name' => 'HR Manager'],
+        ['name' => 'Approver']
     ];
 
     /**

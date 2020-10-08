@@ -9,6 +9,8 @@ class PermissionsSeeder extends Seeder
         ['name' => 'View Approved Requests'],
         ['name' => 'Recommend Leave Requests'],
         ['name' => 'Approve Leave Requests'],
+        ['name' => 'HR'],
+        ['name' => 'Line Manager'],
 
         ['name' => 'View Employees'],
         ['name' => 'Create Employees'],

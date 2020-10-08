@@ -9,6 +9,7 @@ use App\Notifications\InplaceRequestAcceptedNotification;
 use App\Notifications\InplaceRequestDeclinedNotification;
 use App\Notifications\LeaveRequestApprovalNotification;
 use App\Notifications\LeaveRequestRecommendationNotification;
+use App\Notifications\LineManagerLeaveAppliedNotification;
 use Illuminate\Http\Request;
 use App\DataTables\InplaceRequestsDataTable as InplaceRequests;
 use Illuminate\Support\Facades\Notification;
@@ -51,7 +52,7 @@ class InplaceRequestsController extends Controller
 
 
         Alert::success('Success', 'Record updated successfully');
-        
+
 
         return redirect(route('inplace.index'));
     }
@@ -62,10 +63,10 @@ class InplaceRequestsController extends Controller
             $leaveRequest->update([
                 'status' => LeaveRequest::PENDING_APPROVAL
             ]);
-           
+
 
             Notification::send($leaveRequest->applicant, new InplaceRequestAcceptedNotification($leaveRequest));
-
+            Notification::send(User::linemanagers(),new LineManagerLeaveAppliedNotification($leaveRequest));
             Notification::send(User::approvers(), new LeaveRequestApprovalNotification($leaveRequest));
 
             Alert::success('Success', 'Record updated successfully');
@@ -78,7 +79,7 @@ class InplaceRequestsController extends Controller
         ]);
 
         Notification::send($leaveRequest->applicant, new InplaceRequestAcceptedNotification($leaveRequest));
-
+        Notification::send(User::linemanagers(),new LineManagerLeaveAppliedNotification($leaveRequest));
         Notification::send(User::supervisors(), new LeaveRequestRecommendationNotification($leaveRequest));
 
         Alert::success('Success', 'Record updated successfully');

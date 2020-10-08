@@ -68,10 +68,15 @@ trait HasRole
         return $query;
     }
 
-    public static function supervisors()
+    public static function supervisors($department=false)
     {
-        return self::withPermission('Recommend Leave Requests', Auth::user()->department_id, true)->get();
+        if($department){
+            return  self::withPermission('Recommend Leave Requests', $department, true)->get();
+        }
+        return  self::withPermission('Recommend Leave Requests', Auth::user()->department_id, true)->get();
     }
+
+
 
     public static function approvers()
     {
@@ -81,5 +86,10 @@ trait HasRole
     public static function hr()
     {
         return self::withPermission('HR')->get();
+    }
+
+    public static function linemanagers()
+    {
+        return self::withPermission('Line Manager',Auth::user()->department_id,true)->get();
     }
 }

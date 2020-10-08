@@ -51,6 +51,20 @@ class User extends Authenticatable
 
     public function scopeInplaceUsers(Builder $query)
     {
+        //Supervisor choose other supervisor from different department
+       /* if (Auth::user()->isSupervisor()) {
+            return $query->where("id", "<>", Auth::user()->id)
+                ->where(function (Builder $query) {
+                    $permission = 'Recommend Leave Requests';
+                    $query->where('department_id', Auth::user()->department_id)
+                        ->orWhereHas('role', function ($query) use ($permission) {
+                            $query->whereHas('permissions', function ($query) use ($permission) {
+                                $query->where('name', '=', $permission);
+                            });
+                        });
+                });
+        }*/
+
         return $query->where("id", "<>", Auth::user()->id)
             ->where('department_id', Auth::user()->department_id);
     }
