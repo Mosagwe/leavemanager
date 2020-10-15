@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +28,7 @@ class AppServiceProvider extends ServiceProvider
         Carbon::serializeUsing(function ($carbon) {
             return $carbon->format('d/m/Y');
         });
+
+        Schema::defaultStringLength(191);
     }
 }
