@@ -7,9 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c460dcb3-0393-4469-b91f-7f17a1af742e" name="Default Changelist" comment="Add Audit Trail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/HolidaysDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/HolidaysDataTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Holiday.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Holiday.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_131915_create_audits_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,9 +164,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mail/leave" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -199,6 +201,7 @@
       <workItem from="1602152271153" duration="17129000" />
       <workItem from="1602575086833" duration="25000" />
       <workItem from="1602770250858" duration="167000" />
+      <workItem from="1605871257084" duration="4503000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1599831725773</created>
@@ -290,10 +293,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601535086407" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1601535096655">
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1605878283334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601535096655" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605878283334" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

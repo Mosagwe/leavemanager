@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\LeaveRequest;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
@@ -39,7 +40,10 @@ class PendingLeaveRequestsDataTable extends DataTable
     public function query(LeaveRequest $model)
     {
         return $model->newQuery()->select('leave_requests.*')->with('applicant:id,name', 'leaveType:id,name')
-                        ->where('status', LeaveRequest::PENDING_RECOMMENDATION);
+                        ->where('status', LeaveRequest::PENDING_RECOMMENDATION)
+                        ->whereHas('applicant',function (Builder $query){
+                            $query->where('department_id', Auth::user()->department_id);
+                        });
     }
 
      /**

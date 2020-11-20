@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Holiday;
+use Carbon\Carbon;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
@@ -28,7 +29,7 @@ class HolidaysDataTable extends DataTable
                     'holiday' => $holiday
                 ]);
             })->editColumn('date', function ($holiday) {
-                return $holiday->date->format(config('custom.date_format'));
+                return Carbon::createFromFormat('Y-m-d',$holiday->date)->format(config('custom.date_format'));
             })
             ->rawColumns(['action', 'is_annual']);
     }

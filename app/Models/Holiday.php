@@ -4,7 +4,7 @@ namespace App\Models;
 
 class Holiday extends BaseModel
 {
-    protected $dates = [
+   /* protected $dates = [
         'date'
-    ];
+    ];*/
 }
