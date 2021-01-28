@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -60,7 +61,10 @@ class LeaveRequest extends BaseModel implements Auditable
     }
 
     public function scopePending($query){
-        return $query->where('status',self::PENDING_RECOMMENDATION);
+        return $query->where('status',self::PENDING_RECOMMENDATION)
+            ->whereHas('applicant', function (Builder $query) {
+                $query->where('department_id', Auth::user()->department_id);
+            });
     }
     public function scopePendinginplace($query){
         return $query->where('status',self::PENDING_INPLACE);

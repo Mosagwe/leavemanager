@@ -24,7 +24,9 @@ Route::middleware('password')->group(function () {
 
     Route::get('leave-requests/pending', 'LeaveRequestsController@pending')->name('leave-requests.pending');
     Route::get('leave-requests/recommended', 'LeaveRequestsController@recommended')->name('leave-requests.recommended');
+    Route::post('leave-requests/recommend-all', 'LeaveRequestsController@recommendAll')->name('recommend.all');
     Route::get('leave-requests/approved', 'LeaveRequestsController@approved')->name('leave-requests.approved');
+    Route::post('leave-requests/approve-all', 'LeaveRequestsController@approveAll')->name('approve.all');
     Route::PUT('leave-requests/destroy', 'LeaveRequestsController@destroy')->name('leave-requests.destroy');
     Route::PUT('leave-requests/update/{id}', 'LeaveRequestsController@update')->name('leave-requests.update');
 

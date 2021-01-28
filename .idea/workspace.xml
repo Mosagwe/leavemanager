@@ -7,10 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c460dcb3-0393-4469-b91f-7f17a1af742e" name="Default Changelist" comment="Add Audit Trail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/HolidaysDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/HolidaysDataTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Holiday.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Holiday.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/RecommendedLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/RecommendedLeaveRequestsDataTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeaveRequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeaveRequestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LeaveRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LeaveRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/requests/pending.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/requests/pending.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/requests/recommended.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/requests/recommended.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +205,8 @@
       <workItem from="1602575086833" duration="25000" />
       <workItem from="1602770250858" duration="167000" />
       <workItem from="1605871257084" duration="4503000" />
+      <workItem from="1611845562039" duration="1953000" />
+      <workItem from="1611848429586" duration="544000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1599831725773</created>
@@ -279,24 +284,6 @@
     <MESSAGE value="Change title of page" />
     <MESSAGE value="Add Audit Trail" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Audit Trail" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1602164304263">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602164304263" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602166815301">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602166815301" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1601535086407">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601535086407" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1605878283334">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605878283334" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

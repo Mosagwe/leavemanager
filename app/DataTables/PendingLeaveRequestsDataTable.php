@@ -28,7 +28,10 @@ class PendingLeaveRequestsDataTable extends DataTable
                 return $leaveRequest->end_at->format(config('custom.date_format'));
             })->addColumn('action', function ($leaveRequest) {
                 return view('app.leave.requests.actions.pending', ['leaveRequest' => $leaveRequest]);
-            })->rawColumns(['status']);
+            })->rawColumns(['status'])
+            ->editColumn('check',static function ($row){
+                return '<input type="checkbox" class="check" value="'.$row->id.'"/>';
+            })->rawColumns(['check']);
     }
 
     /**
@@ -70,7 +73,8 @@ class PendingLeaveRequestsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('id'),
+            Column::make('id')->visible(false),
+            Column::computed('check','<input type="checkbox" class="checkAll">')->searchable(false)->orderable(false),
             Column::make('applicant.name')->title('Name'),
             Column::make('leave_type.name')->title('Leave Type'),
             Column::make('number_of_days'),
