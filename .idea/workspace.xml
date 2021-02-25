@@ -7,12 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c460dcb3-0393-4469-b91f-7f17a1af742e" name="Default Changelist" comment="Add Audit Trail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/PendingLeaveRequestsDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/RecommendedLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/RecommendedLeaveRequestsDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeaveRequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeaveRequestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LeaveRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LeaveRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/requests/pending.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/requests/pending.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/leave/requests/recommended.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/leave/requests/recommended.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/ApprovedLeaveRequestsDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/ApprovedLeaveRequestsDataTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +162,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../popote_admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -175,6 +170,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\hksleavemanager-dev2\resources\views\mail\leave" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\hksleavemanager\resources\views\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +204,12 @@
       <workItem from="1602770250858" duration="167000" />
       <workItem from="1605871257084" duration="4503000" />
       <workItem from="1611845562039" duration="1953000" />
-      <workItem from="1611848429586" duration="544000" />
+      <workItem from="1611848429586" duration="1579000" />
+      <workItem from="1611894553105" duration="670000" />
+      <workItem from="1612342629043" duration="57000" />
+      <workItem from="1613725604416" duration="135000" />
+      <workItem from="1614237782815" duration="617000" />
+      <workItem from="1614242843119" duration="12861000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1599831725773</created>

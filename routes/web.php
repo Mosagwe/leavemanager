@@ -30,6 +30,8 @@ Route::middleware('password')->group(function () {
     Route::PUT('leave-requests/destroy', 'LeaveRequestsController@destroy')->name('leave-requests.destroy');
     Route::PUT('leave-requests/update/{id}', 'LeaveRequestsController@update')->name('leave-requests.update');
 
+    Route::get('leave-requests/balances','ReportController@leaveBalances')->name('leaves.balances');
+
     Route::get('inplace-requests', 'InplaceRequestsController@index')->name('inplace.index');
     Route::PUT('inplace-requests/{inplace}', 'InplaceRequestsController@update')->name('inplace.update');
     Route::post('applications/get-dates', 'LeaveApplicationController@getDates')->name('applications.dates');
@@ -41,6 +43,7 @@ Route::middleware('password')->group(function () {
     Route::resource('leave-types', 'LeaveTypeController');
     Route::resource('holidays', 'HolidayController');
     Route::resource('employment-types', 'EmploymentController');
+
 });
 
 Route::get('settings', 'SettingController@edit')->name('settings.edit');
