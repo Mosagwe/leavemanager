@@ -49,6 +49,12 @@
                 @endif
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('leaves.balances') }}">
+                <i class="fas fa-file "></i>
+                <span>Leave Balances Report</span>
+            </a>
+        </li>
     @endcan
     @if(\Illuminate\Support\Facades\Auth::user()->isAdministrator())
         <hr class="sidebar-divider">
