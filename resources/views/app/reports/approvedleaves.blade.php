@@ -3,9 +3,7 @@
 @section('title', 'My Applications')
 
 @section('action')
-    <a href="{{ route('applications.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-        <i class="fas fa-plus-circle fa-sm text-white-50"></i> Create New
-    </a>
+
 @stop
 
 @section('main')
@@ -13,10 +11,12 @@
         <div class="col-md-10 offset-1">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title">
-                        <h4>Leave Balances</h4>
+                    <div class="card-header">
+                        <h4 class="card-title">Leave Balances</h4>
                     </div>
-                    <table class="table ">
+
+
+                    <table id="leaveBalances" class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th>Employee Name</th>
@@ -42,5 +42,16 @@
 
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+            $("#leaveBalances").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+@endpush
 
 

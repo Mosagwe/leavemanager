@@ -10,10 +10,10 @@
 
     <title>{{ config('app.name') }} - @yield('title')</title>
 
- 
+
     <link href="{{ asset('css/vendor.bundle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet">
-    
+
 </head>
 
 <body class="@yield('body-class')" style="background-image: url('/img/header.jpg');background-position: center;background-size: cover;">
@@ -22,6 +22,7 @@
 </div>
 <script src="{{ asset('js/vendor.bundle.js') }}"></script>
 <script src="{{ asset('js/scripts.bundle.js') }}"></script>
+<script src="{{ asset('js/pdfmake.min.js') }}"></script>
 @include('sweetalert::alert')
 @stack('scripts')
 </body>
