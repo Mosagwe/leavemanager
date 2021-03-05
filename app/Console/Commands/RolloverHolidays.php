@@ -39,7 +39,7 @@ class RolloverHolidays extends Command
      */
     public function handle()
     {
-        $this->info('Updating Holidays '.Carbon::now());
+        \Log::info('Updating Holidays '.Carbon::now());
         Holiday::chunk(1000, function ($holidays) {
             foreach ($holidays as $holiday) {
                 if ($holiday->is_annual) {
