@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('holidays:rollover')->yearly();
+        $schedule->command('inplace:deadline_notification')->daily();
+
     }
 
     /**

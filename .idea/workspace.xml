@@ -7,7 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c460dcb3-0393-4469-b91f-7f17a1af742e" name="Default Changelist" comment="Add Audit Trail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +212,8 @@
       <workItem from="1614242843119" duration="22670000" />
       <workItem from="1614571847966" duration="3122000" />
       <workItem from="1614917008418" duration="3051000" />
-      <workItem from="1614926126151" duration="2358000" />
+      <workItem from="1614926126151" duration="4287000" />
+      <workItem from="1615262315982" duration="10464000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1599831725773</created>
