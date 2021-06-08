@@ -51,6 +51,8 @@ class ForfeitLeaveDays extends Command
                     'updated_at' => date('Y-m-d H:i:s'),
                 ]);
             }
+            $balance->balance=($balance->leaveType->maximum_days == -1)? -1 : $balance->leaveType->maximum_days ;
+            $balance->save();
             $count++;
         }
         $this->info($count.' leave balances were updated');
