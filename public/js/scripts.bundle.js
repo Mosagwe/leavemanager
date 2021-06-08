@@ -333,7 +333,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\hksleavemanager-dev2\resources\js\scripts.js */"./resources/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\hksleavemanager\resources\js\scripts.js */"./resources/js/scripts.js");
 
 
 /***/ })

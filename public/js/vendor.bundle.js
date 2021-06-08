@@ -48855,9 +48855,9 @@ window.Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\hksleavemanager-dev2\resources\js\vendor.js */"./resources/js/vendor.js");
-__webpack_require__(/*! C:\xampp\htdocs\hksleavemanager-dev2\resources\scss\vendor.scss */"./resources/scss/vendor.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\hksleavemanager-dev2\resources\scss\style.scss */"./resources/scss/style.scss");
+__webpack_require__(/*! C:\xampp\htdocs\hksleavemanager\resources\js\vendor.js */"./resources/js/vendor.js");
+__webpack_require__(/*! C:\xampp\htdocs\hksleavemanager\resources\scss\vendor.scss */"./resources/scss/vendor.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\hksleavemanager\resources\scss\style.scss */"./resources/scss/style.scss");
 
 
 /***/ })
