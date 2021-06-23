@@ -43,6 +43,7 @@ Route::middleware('password')->group(function () {
     Route::resource('leave-types', 'LeaveTypeController');
     Route::resource('holidays', 'HolidayController');
     Route::resource('employment-types', 'EmploymentController');
+    Route::get('employee/changestatus/{id}','EmployeeController@changeStatus')->name('employee.changestatus');
 
 });
 

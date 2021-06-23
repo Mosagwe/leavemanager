@@ -215,4 +215,15 @@ class EmployeeController extends Controller
 
         return $rules;
     }
+    public function changeStatus($id)
+    {
+        $employee=User::find($id);
+        $employee->is_active = !$employee->is_active;
+        if ($employee->save()){
+            return redirect()->route('employees.index');
+        }else{
+            return back();
+        }
+
+    }
 }

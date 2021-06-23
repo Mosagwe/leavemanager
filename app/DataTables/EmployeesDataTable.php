@@ -18,6 +18,9 @@ class EmployeesDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
+            ->editColumn('is_active',function ($user){
+                return view('app.employees.status',compact('user'));
+            })
             ->addColumn('action', function ($user) {
                 if(\Auth::user()->id != $user->id){
                     return view('app.employees.action', [
@@ -69,6 +72,7 @@ class EmployeesDataTable extends DataTable
             Column::make('role.name')->title('Role'),
             Column::make('employment_type.name')->title('Employment'),
             Column::make('department.name')->title('Department'),
+            Column::make('is_active')->title('Status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

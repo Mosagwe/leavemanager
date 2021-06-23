@@ -57,23 +57,26 @@ class LeaveRequest extends BaseModel implements Auditable
             ->where(function ($query) {
                 $query->whereDate('start_at', '>', today()->format('Y-m-d'))
                     ->orWhereDate('end_at', '>', today()->format('Y-m-d'));
-            });
+            })->where('is_archived','=',0);
     }
 
     public function scopePending($query){
         return $query->where('status',self::PENDING_RECOMMENDATION)
             ->whereHas('applicant', function (Builder $query) {
                 $query->where('department_id', Auth::user()->department_id);
-            });
+            })->where('is_archived','=',0);;
     }
     public function scopePendinginplace($query){
-        return $query->where('status',self::PENDING_INPLACE);
+        return $query->where('status',self::PENDING_INPLACE)
+            ->where('is_archived','=',0);
     }
     public function scopePendingapproval($query){
-        return $query->where('status',self::PENDING_APPROVAL);
+        return $query->where('status',self::PENDING_APPROVAL)
+            ->where('is_archived','=',0);
     }
 
     public function scopeApprovedCount($query){
-        return $query->where('status',self::APPROVED);
+        return $query->where('status',self::APPROVED)
+            ->where('is_archived','=',0);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\LeaveBalance;
+use App\Models\LeaveRequest;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -40,9 +41,13 @@ class ForfeitLeaveDays extends Command
     public function handle()
     {
         $balances=LeaveBalance::all();
+        $leave_requests=LeaveRequest::where('is_archived','=',0)->get();
         $count=0;
 
         foreach ($balances as $balance){
+            if(!$balance->employee->is_active){
+                continue;
+            }
             if ($balance->balance >0 && $balance->leaveType->name=='Annual Leave'){
                 DB::table('forfeited_leavedays')->insert([
                     'user_id'=>$balance->user_id,
@@ -55,6 +60,13 @@ class ForfeitLeaveDays extends Command
             $balance->save();
             $count++;
         }
+
+        //change archive status of leave requests
+        foreach ($leave_requests as $leave_request){
+            $leave_request->is_archived=1;
+            $leave_request->save();
+        }
+
         $this->info($count.' leave balances were updated');
 
     }

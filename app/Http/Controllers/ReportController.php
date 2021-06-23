@@ -20,7 +20,7 @@ class ReportController extends Controller
                         join users u on lr.user_id=u.id
                         join leave_types lt on lt.id=lr.leave_type_id
                         join leave_balances lb on u.id=lb.user_id and lb.leave_type_id=lr.leave_type_id
-                        where status=7 and lr.leave_type_id=1
+                        where status=7 and lr.leave_type_id=1 and lr.is_archived=0
                         group by lr.user_id, u.name,lt.name,lb.balance");
 
         return view('app.reports.approvedleaves',compact('leaveRequests'));

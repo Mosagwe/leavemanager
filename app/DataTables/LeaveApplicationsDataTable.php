@@ -39,7 +39,9 @@ class LeaveApplicationsDataTable extends DataTable
      */
     public function query(LeaveRequest $model)
     {
-        return $model->newQuery()->with('leaveType')->where('user_id', \Auth::user()->id);
+        return $model->newQuery()->with('leaveType')
+            ->where('is_archived','=',0)
+            ->where('user_id', \Auth::user()->id);
     }
 
     /**

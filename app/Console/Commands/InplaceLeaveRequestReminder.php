@@ -46,6 +46,7 @@ class InplaceLeaveRequestReminder extends Command
 
         $leaveRequests = LeaveRequest::whereDate('created_at','<',Carbon::now()->subDays(7))
                         ->where('status','=',0)
+                        ->where('is_archived','=',0)
                         ->get();
 
         foreach ($leaveRequests as $leaveRequest) {
