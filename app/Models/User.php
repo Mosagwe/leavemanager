@@ -46,6 +46,8 @@ class User extends Authenticatable implements Auditable
         return $this->hasMany(LeaveBalance::class);
     }
 
+
+
     public function leaveTypeBalance($leaveType)
     {
         return $this->leaveBalances()->where('leave_type_id', $leaveType)->first();

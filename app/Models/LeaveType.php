@@ -8,4 +8,6 @@ class LeaveType extends BaseModel
     {
         return $this->belongsToMany(EmploymentType::class);
     }
+
+
 }

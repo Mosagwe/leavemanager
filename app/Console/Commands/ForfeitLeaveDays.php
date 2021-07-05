@@ -40,34 +40,39 @@ class ForfeitLeaveDays extends Command
      */
     public function handle()
     {
-        $balances=LeaveBalance::all();
-        $leave_requests=LeaveRequest::where('is_archived','=',0)->get();
-        $count=0;
+        $leavebalances = LeaveBalance::all();
+        $leave_requests = LeaveRequest::where('is_archived', '=', 0)->get();
+        $count = 0;
 
-        foreach ($balances as $balance){
-            if(!$balance->employee->is_active){
-                continue;
+        foreach ($leavebalances as $leavebalance) {
+            if (isset($leavebalance->employee)) {
+                if (!$leavebalance->employee->is_active) {
+                    continue;
+                }
             }
-            if ($balance->balance >0 && $balance->leaveType->name=='Annual Leave'){
-                DB::table('forfeited_leavedays')->insert([
-                    'user_id'=>$balance->user_id,
-                    'no_of_days'=>$balance->balance,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ]);
+
+            if (isset($leavebalance->leaveType)) {
+                if ($leavebalance->balance > 0 && $leavebalance->leaveType->name == 'Annual Leave') {
+                    DB::table('forfeited_leavedays')->insert([
+                        'user_id' => $leavebalance->user_id,
+                        'no_of_days' => $leavebalance->balance,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ]);
+                }
+                $leavebalance->balance = ($leavebalance->leaveType->maximum_days == -1) ? -1 : $leavebalance->leaveType->maximum_days;
+                $leavebalance->save();
+                $count++;
             }
-            $balance->balance=($balance->leaveType->maximum_days == -1)? -1 : $balance->leaveType->maximum_days ;
-            $balance->save();
-            $count++;
         }
 
         //change archive status of leave requests
-        foreach ($leave_requests as $leave_request){
-            $leave_request->is_archived=1;
+        foreach ($leave_requests as $leave_request) {
+            $leave_request->is_archived = 1;
             $leave_request->save();
         }
 
-        $this->info($count.' leave balances were updated');
+        $this->info($count . ' leave balances were updated');
 
     }
 }
