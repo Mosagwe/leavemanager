@@ -42,6 +42,7 @@ class RecommendedLeaveRequestsDataTable extends DataTable
     public function query(LeaveRequest $model)
     {
         return $model->newQuery()->select('leave_requests.*')->with('applicant:id,name', 'leaveType:id,name')
+            ->where('is_archived','=',0)
             ->where('status', LeaveRequest::PENDING_APPROVAL);
     }
 

@@ -41,6 +41,7 @@ class InplaceRequestsDataTable extends DataTable
     {
         return $model->newQuery()
             ->with('leaveType')
+            ->where('is_archived','=',0)
             ->where('status', LeaveRequest::PENDING_INPLACE)
             ->where('employee_inplace', Auth::user()->id);
     }
