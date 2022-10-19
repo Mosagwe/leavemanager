@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
         $user = User::create([
             'name' => 'Peter Mosagwe',
             'username' => 'mosagwe',
-            'email' => 'pmosagwe@hudumakenya.go.ke',
+            'email' => 'pmosagwe@pmo.com',
             'password' => bcrypt('password'),
             'gender' => 'Male',
             'change_password' => false,
