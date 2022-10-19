@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3|^8.0",
         "barryvdh/laravel-snappy": "^0.4.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
@@ -16,7 +16,7 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "owen-it/laravel-auditing": "^11.0",
+        "owen-it/laravel-auditing": "^13.0.5",
         "realrashid/sweet-alert": "^3.1",
         "yajra/laravel-datatables": "1.5",
         "yajra/laravel-datatables-oracle": "^9.4"

@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark sidenav sidenav-bar accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('applications.index') }}">
         <div class="sidebar-brand-text mx-3">
-           <font style="color:#000;">Huduma </font><font style="color:#fa3333;">Kenya </font><font style="color:#009933;">Secretariat </font>
+           <font style="color:#000;">P </font><font style="color:#fa3333;">M </font><font style="color:#009933;">O </font>
         </div>
     </a>
     <hr class="sidebar-divider my-0">

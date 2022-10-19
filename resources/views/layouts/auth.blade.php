@@ -14,7 +14,7 @@
                         </div>
                         <hr>
                         
-                        <h4 class="text-center" style="font-weight: bold;"><font style="color:#000;">HKS </font><font style="color:#fa3333;">Leave </font><font style="color:#009933;">Manager </font></h4>
+                        <h4 class="text-center" style="font-weight: bold;"><font style="color:#000;">PMO </font><font style="color:#fa3333;">Leave </font><font style="color:#009933;">Manager </font></h4>
                         <div class="auth-form my-4">
                             @yield('auth')
                         </div>
